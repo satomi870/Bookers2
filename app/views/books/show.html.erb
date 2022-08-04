@@ -1,2 +1,48 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+
+
+<h3>User info</h3>
+  <h3>name<%=@user.name%></h3>
+  <h3>introduction<%=@user.introduction%></h3>
+  <%= image_tag @user.get_profile_image(100,100) %>
+
+
+<h2>New Book</h2>
+<%=form_with model: @newbook do |f| %>
+
+<div class="form_group">
+  <label for="book_title">Title</label>
+  <%=f.text_field:title%><br/>
+</div>
+
+<div class="form_group">
+  <label for="book_opinion">Opinion</label>
+  <%=f.text_area:opinion%><br/>
+</div>
+
+
+
+<div class="form_group">
+  <%=f.submit'CreateBook'%>
+</div>
+
+<%end%>
+
+
+
+
+
+
+<h2>Book datail</h2>
+<table class="table">
+ <tbody>
+     <tr>
+         <td> <%= image_tag 'sample-author1.jpg' %></td>
+         <td><%=@book.user.name%></td>
+         <td><%=@book.title%></td>
+         <td><%=@book.body%></td>
+     </tr>
+
+ </tbody>
+ </table>
+
+
