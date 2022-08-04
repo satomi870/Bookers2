@@ -4,6 +4,11 @@
   <h3>introduction<%=@user.introduction%></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
 
+  <%if @user==current_user%>
+  <p><%=link_to"edit",edit_user_path(@user)%></p>
+  <%end%>
+
+
 
 <h2>New Book</h2>
 <%=form_with model:@book do |f| %>
