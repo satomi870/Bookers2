@@ -1,5 +1,16 @@
+<% if @user.errors.any?%>
+<%=@user.errors.count%>error
+<ul>
+  <%@user.errors.full_messages.each do |message| %>
+  <Li><%=message%></Li>
+  <%end%>
+</ul>
+<%end%>
+
+
+
 <h2>User info</h2>
-<%=form_with model:@user do |f| %>
+<%=form_with model: @user do |f| %>
 <div class="form_group">
   <label for="user_name">Name</label>
   <%=f.text_field:name%>
@@ -10,7 +21,7 @@
 </div>
 <div class="form_group">
   <label for="user_Introduction">Introduction</label>
-  <%=f.text_area:Introduction%>
+  <%=f.text_area:introduction%>
 </div>
 <div class="form_group">
   <%=f.submit"Update User"%>

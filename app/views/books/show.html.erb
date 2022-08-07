@@ -1,15 +1,21 @@
-
+<% if flash[:notice] %>
+     <p id="notice">
+       <%= flash[:notice] %>
+     </p>
+<% end %>
 
 <h3>User info</h3>
   <h3>name<%=@book.user.name%></h3>
   <h3>introduction<%=@user.introduction%></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
+  
+  <%=link_to"edit",edit_user_path(@current_user)%>
 
 
 <h2>New Book</h2>
 <%=form_with model: @newbook do |f| %>
 
-<div class="form_group">
+<div class="form_group">1
   <label for="book_title">Title</label>
   <%=f.text_field:title%><br/>
 </div>

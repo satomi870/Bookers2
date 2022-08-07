@@ -1,9 +1,20 @@
+<% if @book.errors.any?%>
+<%=@book.errors.count%>error
+<ul>
+  <%@book.errors.full_messages.each do |message| %>
+  <Li><%=message%></Li>
+  <%end%>
+</ul>
+<%end%>
+
 <h1>indexページ</h1>
 
 <h3>User info</h3>
-  <h3>name<%=@user.name%></h3>
-  <h3>introduction<%=@user.introduction%></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
+  <h3>name<%=@users.name%></h3>
+  <h3>introduction<%=@users.introduction%></h3>
+  <%= image_tag @users.get_profile_image(100,100) %>
+  
+  <%=link_to"edit",edit_user_path(@users)%>
 
 
 
@@ -44,6 +55,7 @@
       <td><%=link_to image_tag(book.user.get_profile_image(100,100)),user_path(book.user) %></td>
       <td><%=link_to book.title,book_path(book)%></td>
       <td><%=book.body%></td>
+  
     </tr>
   </tbody>
   <%end%>

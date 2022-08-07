@@ -25,10 +25,20 @@
       </div>
     </div>
   </nav>
+  
+    　<% flash.each do |key, value| %>
+    　　<%= content_tag(:div, value, class: "#{key}") %>
+  　　<% end %>
            
     <% if user_signed_in? %>
+    
+    
       <li>
         <%=link_to "Home", user_path(current_user.id)%>
+      </li>
+      
+      <li>
+        <%=link_to "User", users_path%>
       </li>
       <li>
         <%=link_to "Books",books_path%>

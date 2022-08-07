@@ -1,11 +1,11 @@
 <h3>User info</h3>
   <h3>name<%=@user.name%></h3>
   <h3>introduction<%=@user.introduction%></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
+  <%# image_tag @user.get_profile_image(100,100) %>
 
-  <%if @user==current_user%>
-  <p><%=link_to"edit",edit_user_path(@user)%></p>
-  <%end%>
+  
+  <%=link_to"edit",edit_user_path(@user)%>
+  
   
 
 <h2>New Book</h2>
@@ -46,7 +46,7 @@
 
 <tbody>
   <tr>
-    <td><%= image_tag user.get_profile_image(100,100) %></td>
+    <td><%=image_tag user.get_profile_image(100,100) %></td>
     <td>><%=user.name%></td>
     <td><%=link_to"show",user_path(user)%></td>
   </tr>
