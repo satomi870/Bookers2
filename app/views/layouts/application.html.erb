@@ -68,8 +68,9 @@
       </div>
     </nav>
 　</header>
-
-  
+   <%flash.each do |key, value|%>
+   <%=content_tag(:div, value, class: "flash flash__#{key}")%>
+   <%end%>
   <%= yield %>
   
   <footer>

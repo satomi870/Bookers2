@@ -1,8 +1,6 @@
 <div class="container px-5 px-sm-0">
 
-     <p id="notice">
-       <%= flash[:notice] %>
-     </p>
+     
 
 
  <div class="row">
@@ -12,7 +10,7 @@
 
 
 <div class="col-md-8 offset-md-1">
-<h2>Book datail</h2>
+<h2>Book detail</h2>
 <table class="table">
  <tbody>
      <tr>
@@ -24,7 +22,7 @@
          <td><%link_to"Edit",edit_book_path(@book)%></td>
          <% if @book.user==current_user%>
           <td><%=link_to"Edit",edit_book_path(@book),class:"btn btn-sm btn-success"%></td>
-         <td><%=link_to"destroy",book_path(@book),method: :delete ,class:"btn btn-sm btn-danger"%></td>
+         <td><%=link_to"Destroy",book_path(@book),method: :delete ,class:"btn btn-sm btn-danger"%></td>
          </td>
          <%end%>
      </tr>
