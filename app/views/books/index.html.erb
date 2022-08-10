@@ -1,3 +1,10 @@
+<div class="container px-5 px-sm-0">
+  
+
+
+
+
+
 <% if @book.errors.any?%>
 <%=@book.errors.count%>error
 <ul>
@@ -6,8 +13,11 @@
   <%end%>
 </ul>
 <%end%>
+<div class="row">
+<div class="col-md-3">
 
 <%=render 'list', users: @users, book: @book%>
+</div>
 
 
 
@@ -15,10 +25,9 @@
 
 
 
-
-
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
-<table>
+<table class="table table-hover table-inverse">
   <thead>
     <tr>
       <th></th>
@@ -38,7 +47,8 @@
   </tbody>
   <%end%>
 </table>
+</div>
 
-
-
+</div>
+</div>
 

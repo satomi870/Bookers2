@@ -1,12 +1,15 @@
-　
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-3">  
+ 
 <%=render 'books/list', users: @user, book: @book%>
-
+  </div>
 
   
-
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
 
-<table>
+<table class="table table-hover table-inverse">
   <thead>
     <tr>
     <th></th>
@@ -25,6 +28,8 @@
   </tbody>
   <%end%>
  </table>
-
  
+ </div>
+ </div>
+ </div>
   
